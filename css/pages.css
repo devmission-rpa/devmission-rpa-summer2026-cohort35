@@ -1,0 +1,47 @@
+.loading-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+.loading-container {
+  width: 450px;
+  height: 60px;
+  border: 2px solid black;
+  background-color: rgb(252, 252, 252);
+}
+
+
+
+
+.loading-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #0088ff;
+  animation: loading 3s forwards;
+}
+
+
+.loading-title {
+   text-align: left;
+   margin-bottom: -45px;
+   position: relative;
+   z-index: 2;
+   margin-left: 40px;
+}
+.person img {
+   border: 3px solid #0088ff;
+   outline: 3px dotted #ffe659;
+   outline-offset: 5px;
+   margin: 10px;
+.project img {
+   border: 3px solid #0088ff;
+   outline: 3px dotted #ffe659;
+   outline-offset: 5px;
+   margin: 10px;
+}
+}
