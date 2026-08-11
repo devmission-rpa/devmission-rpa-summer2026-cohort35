@@ -33,15 +33,171 @@
    z-index: 2;
    margin-left: 40px;
 }
+
 .person img {
    border: 3px solid #0088ff;
    outline: 3px dotted #ffe659;
    outline-offset: 5px;
    margin: 10px;
+   height: auto;
+   width: auto;
+   max-height: 15vh;
+   max-width: 15vh;
+}
+
+/*
+  Projects CSS relatively starts here
+*/
+
+/* All img children of project class */
 .project img {
    border: 3px solid #0088ff;
    outline: 3px dotted #ffe659;
    outline-offset: 5px;
    margin: 10px;
 }
+
+/* The container used to hold the images of us with our projects */
+.project-images {
+   border: 3px solid #0088FF;
+   outline: 3px dotted #FFE659;
+   outline-offset: 5px;
+   display: flex;
+   flex-direction: column;
+   max-height: 70vh;
+   height: 70vh;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Our actual images of the projects with us in them */
+.project-images img{
+  max-width: 20vh;
+  max-height: 20vh;
+
+}
+
+#projects-container {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 30%;
+  height: 80vh;
+  border: 1px solid #F1F1F1;
+  perspective: 1000px;
+  padding: 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* 
+  CSS for Staff Page starts here 
+*/
+.container { 
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+
+/* Core container setup */
+.fire-container {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin: 50px auto;
+  cursor: pointer;
+}
+
+/* Base image styling */
+.target-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* Flame container overlay */
+.flame-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows cursor to pass through to the image */
+  opacity: 0;
+  mix-blend-mode: screen; /* Blends colors dynamically for a hot, glowing appearance */
+  transition: opacity 0.4s ease;
+}
+
+/* Triggering the effects on hover */
+.fire-container:hover .target-image {
+  transform: scale(1.02);
+  /* Turns the image fiery-red/orange and increases contrast */
+  /* filter: sepia(0.6) saturate(3) hue-rotate(-15deg) contrast(1.2) brightness(0.9);*/
+}
+
+.fire-container:hover .flame-layer {
+  opacity: 1;
+  /* Multi-layered fire shadows + flicker animation */
+  animation: flicker 1s ease-in-out infinite alternate;
+  box-shadow: 
+    0 -10px 20px rgba(255, 130, 0, 0.8),    /* Inner orange */
+    0 -20px 40px rgba(255, 60, 0, 0.6),     /* Main red-orange */
+    0 -40px 60px rgba(255, 0, 0, 0.4),      /* Outer dark red */
+    inset 0 0 30px rgba(255, 200, 0, 0.5);  /* Internal core glow */
+}
+
+/* Keyframe animation to simulate dancing flames */
+@keyframes flicker {
+  0% {
+    transform: skewX(-1deg) scaleY(1);
+    filter: blur(2px) brightness(1);
+  }
+  100% {
+    transform: skewX(1.5deg) scaleY(1.05);
+    filter: blur(4px) brightness(1.4);
+    /* Slightly shifting box shadows during animation creates motion */
+    box-shadow: 
+      0 -14px 22px rgba(255, 0, 0, 0.966),
+      -2px -25px 45px rgb(9, 255, 0),
+      3px -45px 55px rgba(0, 4, 255, 0.986),
+      inset 0 0 35px rgb(255, 0, 0);
+  }
 }
