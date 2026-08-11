@@ -1,3 +1,87 @@
+/*
+  index.html CSS starts here
+*/
+
+.enter-btn{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enter-button{
+    text-decoration: none;
+    background-color: #B8B7B7;
+    color: rgb(0, 0, 0);
+    padding: 35px 40px;
+    border-radius: 20px;
+    transition: all 3s ease;
+    cursor: pointer;
+    animation: shaking 2s infinite;
+}
+
+@keyframes shaking {
+    10%{
+        transform: scale(1.5) rotate(5deg);
+    }
+    20%{
+        transform: scale(1.5) rotate(-5deg);
+    }
+    30%{
+        transform: scale(1.5) rotate(5deg);
+    }40%{
+        transform: scale(1.5) rotate(-5deg);
+    }50%{
+        transform:none;
+    }
+}
+
+
+
+#enter-button:hover{
+   background-color: #FFFFFF;
+   color: #000000;
+   box-shadow:
+    0 0 5px #FFFFFF,
+    0 0 20px #FFFFFF,
+    0 0 40px #FFFFFF,
+    0 0 60px #FFFFFF;
+}
+
+.hero {
+font-display: flex;
+justify-content: center;
+align-items: center;
+max-height: 100vh;
+
+
+
+
+
+background-position: cover;
+background-position: center;
+
+text-align: center;
+color: white;
+}
+
+.hero h1 {
+font-size: 4rem;
+margin-bottom: 1rem;
+}
+
+.hero p {
+font-size: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.landing-page {
+text-align: center;
+}
+
+/*
+  loading.html CSS starts here...?
+*/
+
 .loading-page {
   display: flex;
   justify-content: center;
