@@ -11,10 +11,10 @@ body {
 /* Navbar links */
 .nav-links {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 30px;
   list-style: none;
-  padding: 0;
+  padding: 5%;
   margin: 0;
 }
 /* Navbar links box-border */
