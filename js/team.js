@@ -197,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
 function playMultiBlip(blipCount = 4, speedMs = 50) {
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   const startTime = audioCtx.currentTime;
