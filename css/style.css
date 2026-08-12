@@ -8,15 +8,28 @@ body {
   font-family: "Pixelify Sans", sans-serif;
   text-align: center;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Pushes logo to left, links to right */
+  align-items: center;            /* Vertically centers the logo with the buttons */
+  padding: 10px 20px;             /* Optional padding for layout spacing */
+}
+
+.logo {
+  width: fit-content;
+}
+
 /* Navbar links */
 .nav-links {
+  width: fit-content;
   display: flex;
-  justify-content: left;
   gap: 30px;
   list-style: none;
-  padding: 5%;
+  padding: 0;
   margin: 0;
 }
+
 /* Navbar links box-border */
 .nav-links a {
   color: white;
