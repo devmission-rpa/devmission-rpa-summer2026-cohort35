@@ -107,17 +107,6 @@
   margin-left: 40px;
 }
 
-.person img {
-  border: 3px solid #0088ff;
-  outline: 3px dotted #ffe659;
-  outline-offset: 5px;
-  margin: 10px;
-  height: auto;
-  width: auto;
-  max-height: 15vh;
-  max-width: 15vh;
-}
-
 /*
   Projects CSS relatively starts here
 */
@@ -261,28 +250,50 @@
       0px 0px 0px 0px #000000;
   }
 
-.container {
+
+.person {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
 }
 
+.person img {
+  border: 3px solid #0088ff;
+  outline: 3px dotted #ffe659;
+  outline-offset: 5px;
+  margin: 10px;
+  height: auto;
+  width: auto;
+}
+
 /* Core container setup */
+/*
+  To change the size of the entry, the width and height 
+  of these elements must be descending order
+  fire-container > img-container > target-image
+
+  Trying to use percentage will probably shift photos/text 
+  because of the different photo sizes
+*/
 .fire-container {
   position: relative;
-  width: 18vh;
-  height: 30vh;
+  justify-content: center;
+  align-items: center;
+  width: 30vh;
+  height: 100%;
   margin: 50px auto;
   cursor: pointer;
 }
 
 .fire-container p{
   height: 10vh;
-  overflow: scroll;
-  scrollbar-color: RGB(0, 0, 255) RGB(0, 0, 255);
+  overflow-y: auto;
+  scrollbar-color: RGB(255, 255, 0) RGB(0, 0, 255);
+  scrollbar-width: thin;
 }
 
 .img-container {
-  height: 17vh;
+  height: 27vh;
+  width: 100%;
   justify-content: center;
   align-content: center;
 }
@@ -291,6 +302,8 @@
 .target-image {
   width: 100%;
   height: 100%;
+  max-width: 25vh;
+  max-height: 25vh;
   object-fit: cover;
   transition:
     filter 0.4s ease,
@@ -303,7 +316,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   pointer-events: none; /* Allows cursor to pass through to the image */
   opacity: 0;
   mix-blend-mode: screen; /* Blends colors dynamically for a hot, glowing appearance */
