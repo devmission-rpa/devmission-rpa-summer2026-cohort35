@@ -44,7 +44,8 @@ async function retrieveData(token, dataAttribute){
             element.src = photoMap.get(key) ?? placeholder;
             let name = key.split(" ");
             let first_name = name[0];
-            element.parentElement.nextElementSibling.innerHTML = first_name + " - " + titleMap.get(key) ?? "Title Unavailable :("
+            let paragraph = element.parentElement.nextElementSibling;
+            paragraph.innerHTML = first_name + " - " + titleMap.get(key) ?? "Title Unavailable :("
             clicked = false;
           }
           playMultiBlip();
